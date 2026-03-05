@@ -1,0 +1,35 @@
+[project]
+name = "e2e-gpt2-with-jax"
+version = "0.1.0"
+description = "End-to-end GPT-2 training on a local GPU using JAX"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    # Core JAX stack
+    "jax[cuda12]>=0.4.25",
+    "flax>=0.8.0",
+    "optax>=0.2.0",
+    # Data loading / tokenisation
+    "datasets>=2.19.0",
+    "tiktoken>=0.6.0",
+    "transformers>=4.40.0",
+    # Utilities
+    "tqdm>=4.66.0",
+    "numpy>=1.26.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "ruff>=0.4.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
