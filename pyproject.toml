@@ -16,6 +16,8 @@ dependencies = [
     # Utilities
     "tqdm>=4.66.0",
     "numpy>=1.26.0",
+    "grain>=0.2.13",
+    "matplotlib>=3.10.8",
 ]
 
 [project.optional-dependencies]
@@ -23,6 +25,9 @@ dev = [
     "pytest>=8.0.0",
     "ruff>=0.4.0",
 ]
+
+[tool.hatch.build.targets.wheel]
+packages = ["gpt2"]
 
 [build-system]
 requires = ["hatchling"]
